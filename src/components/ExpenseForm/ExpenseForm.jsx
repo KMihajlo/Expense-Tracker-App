@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // Using Multitle states
   const [title, setTitle] = useState("");
   const [amount, setAmount] = useState("");
@@ -15,7 +15,13 @@ const ExpenseForm = () => {
   // });
 
   const titleChangeHandler = (e) => {
+    // Using Multiple states
     setTitle(e.target.value);
+
+    // Using Single state
+    // setUserInput((prevState) => {
+    //   return { ...prevState, title: e.target.value };
+    // });
   };
   const amountChangeHandler = (e) => {
     setAmount(e.target.value);
@@ -35,7 +41,8 @@ const ExpenseForm = () => {
     setTitle("");
     setAmount("");
     setDate("");
-    console.log(data);
+
+    props.onSubmitData(data);
   };
 
   return (
