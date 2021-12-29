@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Card from "../Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
-import "./Expenses.css";
 import ExpensesList from "./ExpensesList/ExpensesList";
+import ExpensesChart from "../ExpenseData/ExpensesChart/ExpensesChart";
+import "./Expenses.css";
 
 const Expenses = (props) => {
   const [year, setYear] = useState("2021");
@@ -19,7 +20,7 @@ const Expenses = (props) => {
     <div>
       <Card className="expenses">
         <ExpenseFilter selected={year} onFilter={filterHandler} />
-
+        <ExpensesChart expenses={filteredExpenses} />
         {/* Using the AND operator ** */}
         {/* {filteredExpenses.length === 0 && <p>No expenses found</p>}
         {filteredExpenses.length > 0 && (
