@@ -10,3 +10,7 @@
 * Rendering Lists & Conditional Content
 * Styling React Components
 * Debugging React Apps
+* Hosting: Firebase
+
+#
+***Check it out here https://expense-tracker-be906.web.app/***
