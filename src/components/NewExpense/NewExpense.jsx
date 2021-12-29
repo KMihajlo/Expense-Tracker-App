@@ -13,7 +13,7 @@ const NewExpense = (props) => {
 
   return (
     <div className="new-expense">
-      <ExpenseForm onSubmitData={submitDataHandler} />
+      <ExpenseForm onCancel={props.onCancel} onSubmitData={submitDataHandler} />
     </div>
   );
 };

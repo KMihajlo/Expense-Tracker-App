@@ -27,6 +27,7 @@ const INITIAL_EXPENSES = [
 
 const App = () => {
   const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
+  const [open, setOpen] = useState(false);
 
   const addExpenseHandler = (data) => {
     // Special way of assigning data to state dependant on the previous state
@@ -35,19 +36,41 @@ const App = () => {
     });
   };
 
+  const openModalHandler = () => {
+    setOpen(true);
+  };
+  const closeModalHandler = () => {
+    setOpen(false);
+  };
+
   return (
     <div className="wrapper">
       <div className="header-wrapper">
         <div className="title-wrapper">
           <h1>Expense Tracker</h1>
-          <h5 style={{margin:'-15px'}}><cite>- Where expenses are engineered!</cite></h5>
+          <h5 style={{ margin: "-15px" }}>
+            <cite>- Where expenses are engineered!</cite>
+          </h5>
         </div>
-        <div className="new-expense__wrapper">
-          <button className="new-expense__button">Add New Expense</button>
-        </div>
+        {!open ? (
+          <div className="new-expense__wrapper">
+            <button onClick={openModalHandler} className="new-expense__button">
+              Add New Expense
+            </button>
+          </div>
+        ) : (
+          <p></p>
+        )}
       </div>
       <div>
-        <NewExpense onAddExpense={addExpenseHandler} />
+        {open ? (
+          <NewExpense
+            onCancel={closeModalHandler}
+            onAddExpense={addExpenseHandler}
+          />
+        ) : (
+          <p></p>
+        )}
         <Expenses items={expenses} />
       </div>
     </div>
