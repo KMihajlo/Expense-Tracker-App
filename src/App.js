@@ -36,9 +36,20 @@ const App = () => {
   };
 
   return (
-    <div>
-      <NewExpense onAddExpense={addExpenseHandler} />
-      <Expenses items={expenses} />
+    <div className="wrapper">
+      <div className="header-wrapper">
+        <div className="title-wrapper">
+          <h1>Expense Tracker</h1>
+          <h5 style={{margin:'-15px'}}><cite>- Where expenses are engineered!</cite></h5>
+        </div>
+        <div className="new-expense__wrapper">
+          <button className="new-expense__button">Add New Expense</button>
+        </div>
+      </div>
+      <div>
+        <NewExpense onAddExpense={addExpenseHandler} />
+        <Expenses items={expenses} />
+      </div>
     </div>
   );
 };

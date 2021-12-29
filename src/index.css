@@ -12,3 +12,48 @@ body {
   margin: 0;
   background-color: #ffffff;
 }
+.header-wrapper{
+  padding: 1rem;
+  margin-top: -3rem;
+  margin: 1rem auto 7rem auto;
+  width: 50rem;
+  max-width: 95%;
+  text-align: center;
+}
+
+.title-wrapper{
+  float: left;
+}
+
+.new-expense__wrapper{
+  float: right;
+}
+
+.new-expense__button{
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid #dbdbdb;
+  background-color: #003c96;
+  color: white;
+  border-radius: 12px;
+  margin-top: 1rem;
+}
+
+.new-expense__button:hover,
+.new-expense button:active{
+  background-color: #0047b3;
+  border-color: #dbdbdb;
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.new-expense__button.alternative {
+  color: #011031;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.new-expense__button.alternative:hover,
+.new-expense__button.alternative:active {
+  background-color: #b3c3f8;
+}
